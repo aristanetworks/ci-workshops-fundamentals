@@ -1,0 +1,9 @@
+---
+
+vlans:
+  - 10:
+    name: Ten
+  - 20:
+    name: Twenty
+  - 30:
+    name: Thirty
