@@ -12,4 +12,4 @@ ansible_httpapi_validate_certs: false
 
 # Credentials
 ansible_user: arista
-ansible_ssh_pass: aristau0ue
+ansible_ssh_pass: arista1c7z

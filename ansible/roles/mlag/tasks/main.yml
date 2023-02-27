@@ -1,0 +1,26 @@
+---
+
+- name: Generate MLAG Configs
+  template:
+    src: mlag.j2
+    dest: configs/mlag/{{ inventory_hostname }}_mlag.cfg
+  tags: ['always', 'build', 'deploy']
+  register: mlag_configs
+  when: mlag.enabled is defined and mlag.enabled
+
+- name: Validate MLAG Configurations against Device(s)
+  arista.eos.eos_config:
+    src: ../configs/mlag/{{ inventory_hostname}}_mlag.cfg
+    replace: line
+  check_mode: yes
+  tags: ['deploy', 'validate']
+  when: mlag_configs is not skipped
+
+- name: Push MLAG configuration to device(s)
+  arista.eos.eos_config:
+    src: ../configs/mlag/{{ inventory_hostname }}_mlag.cfg
+    replace: line
+    save_when: changed
+  check_mode: no
+  tags: ['deploy', 'never']
+  when: mlag_configs is not skipped
