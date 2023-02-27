@@ -1,0 +1,5 @@
+mlag:
+  enabled: true
+  side_a: false
+  peer_link_int_1: 1
+  peer_link_int_2: 6
