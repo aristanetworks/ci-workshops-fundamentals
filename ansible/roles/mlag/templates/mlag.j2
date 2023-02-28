@@ -1,0 +1,31 @@
+{% if mlag.enabled is defined and mlag.enabled is true %}
+spanning-tree mode rapid-pvst 
+no spanning-tree vlan-id {{ mlag_config.vlan.id }} 
+!
+vlan {{ mlag_config.vlan.id }}
+   name {{ mlag_config.vlan.name }}
+   trunk group {{ mlag_config.vlan.trunk_group_name }}
+!
+interface Port-Channel{{ mlag_config.peer_link_id }}
+   description MLAG PEER LINK
+   switchport mode trunk
+   switchport trunk group {{ mlag_config.vlan.trunk_group_name }}
+!
+interface Ethernet{{ mlag.peer_link_int_1 }} 
+   channel-group {{ mlag_config.peer_link_id }} mode active
+!
+interface Ethernet{{ mlag.peer_link_int_2 }}
+   channel-group {{ mlag_config.peer_link_id }} mode active
+!
+interface Vlan{{ mlag_config.vlan.id }}
+   description MLAG PEER SYNC
+   mtu 9014
+   no autostate
+   ip address {{ '10.0.0.1/30' if mlag.side_a is defined and mlag.side_a else '10.0.0.2/30' }}
+!
+mlag configuration
+   domain-id {{ mlag_config.domain_id }}
+   local-interface Vlan{{ mlag_config.vlan.id }}
+   peer-address {{ '10.0.0.2' if mlag.side_a is defined and mlag.side_a else '10.0.0.1' }}
+   peer-link Port-Channel{{ mlag_config.peer_link_id }}
+{% endif %}

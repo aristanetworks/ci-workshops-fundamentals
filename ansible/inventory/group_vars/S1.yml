@@ -1,0 +1,13 @@
+mlag_config:
+  domain_id: 1000
+  vlan:
+    id: 4094
+    name: mlagpeer
+    trunk_group_name: mlagpeer
+  peer_link_id: 1000
+  side_a:
+    ip: 10.0.0.1/30
+    peer_ip: 10.0.0.2
+  side_b:
+    ip: 10.0.0.2/30
+    peer_ip: 10.0.0.1

@@ -1,0 +1,15 @@
+# eAPI connectivity via HTTPS (as opposed to CLI via SSH)
+ansible_connection: ansible.netcommon.httpapi
+
+# Specifies that we are using Arista EOS
+ansible_network_os: arista.eos.eos
+
+# Use SSL (HTTPS)
+ansible_httpapi_use_ssl: true
+
+# Disable SSL certificate validation
+ansible_httpapi_validate_certs: false
+
+# Credentials
+ansible_user: arista
+ansible_ssh_pass: arista1c7z
