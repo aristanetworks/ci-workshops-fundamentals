@@ -4,4 +4,4 @@ mlag:
   peer_link_int_1: 1
   peer_link_int_2: 6
 
-banner_text: "This banner came from host_vars/s1-leaf1.YML"
+banner_text: "This banner came from host_vars/s1-leaf1.yml"

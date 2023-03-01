@@ -12,4 +12,4 @@ mlag_config:
     ip: 10.0.0.2/30
     peer_ip: 10.0.0.1
 
-banner_text: "This banner came from group_vars/S1.YML"
+banner_text: "This banner came from group_vars/S1.yml"

@@ -15,4 +15,4 @@ ansible_user: arista
 ansible_ssh_pass: arista1c7z
 
 # Global login banner for all switches in topology
-banner_text: "This banner came from group_vars/WORKSHOP_FABRIC.YML"
+banner_text: "This banner came from group_vars/WORKSHOP_FABRIC.yml"
