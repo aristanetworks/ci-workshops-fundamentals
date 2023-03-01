@@ -1,0 +1,13 @@
+---
+
+- name: A simple playbook
+  hosts: localhost
+  gather_facts: false
+  vars:
+    name: Mr.T
+
+  tasks:
+
+    - name: Say Hello
+      debug:
+        msg: "Hello {{ name | default('you!') }}"
