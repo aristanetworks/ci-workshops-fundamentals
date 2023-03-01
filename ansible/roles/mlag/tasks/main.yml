@@ -1,5 +1,14 @@
 ---
 
+- name: Create required output directory if not already present
+  tags: ['always', 'build']
+  ansible.builtin.file:
+    path: ../configs/mlag
+    state: directory
+    mode: 0775
+  delegate_to: localhost
+  run_once: true
+
 - name: Generate MLAG Configs
   template:
     src: mlag.j2
