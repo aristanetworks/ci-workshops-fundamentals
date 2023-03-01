@@ -3,7 +3,6 @@
 - name: Deploy MLAG Confguration to Arista Switches
   connection: local
   hosts: S1_LEAFS,S1_SPINES
-  gather_facts: false
 
   tasks:
 
