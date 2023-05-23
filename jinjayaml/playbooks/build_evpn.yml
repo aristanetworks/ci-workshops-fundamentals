@@ -1,0 +1,14 @@
+---
+- hosts: leaf1
+  gather_facts: false
+  tasks:
+
+  - name: Register variables
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/evpn.yml"
+      name: vrf
+      
+  - name: Create configs
+    template:
+      src: "{{lookup('env','PWD')}}/templates/evpn.j2"
+      dest: "{{lookup('env','PWD')}}/configs/evpn/{{inventory_hostname}}_vxlan_config.cfg"

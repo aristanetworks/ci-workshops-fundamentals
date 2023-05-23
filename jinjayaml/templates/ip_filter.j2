@@ -1,0 +1,17 @@
+Here is some information about some of Spine1's interfaces:
+
+Ethernet1
+    IP: {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('address')  }}
+    Subnet Mask:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('netmask')  }}
+    Network ID:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('network')  }}
+    Network Size:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('size')  }}
+    Usable Range:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('range_usable')  }}
+    Broadcast Address:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet1']['ipv4'] | ipaddr('broadcast')  }}
+
+Ethernet2
+    IP: {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('address')  }}
+    Subnet Mask:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('netmask')  }}
+    Network ID:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('network')  }}
+    Network Size:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('size')  }}
+    Usable Range:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('range_usable')  }}
+    Broadcast Address:  {{ ip_filter[inventory_hostname]['interfaces']['Ethernet2']['ipv4'] | ipaddr('broadcast')  }}

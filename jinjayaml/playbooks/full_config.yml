@@ -1,0 +1,19 @@
+---
+- hosts: spine1,spine2,leaf1,leaf2
+  gather_facts: false
+  tasks:
+
+  - name: Register variables
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/global.yml"
+      name: global
+
+  - name: Register variables
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/interface.yml"
+      name: interface
+      
+  - name: Create configs
+    template:
+      src: "{{lookup('env','PWD')}}/templates/full_config.j2"
+      dest: "{{lookup('env','PWD')}}/configs/full_config/{{inventory_hostname}}_config.cfg"
