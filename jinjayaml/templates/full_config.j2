@@ -1,0 +1,85 @@
+{# Base Config Test #}
+
+hostname {{ inventory_hostname }}
+
+username admin priv {{ global['local_users']['admin']['privilege'] }} role {{ global['local_users']['admin']['role'] }} secret {{ global['local_users']['admin']['secret'] }}
+
+username noc priv {{ global['local_users']['noc']['privilege'] }} role {{ global['local_users']['noc']['role'] }} secret {{ global['local_users']['noc']['secret'] }}
+
+aaa authentication login default {{ global['aaa_authentication']['login']['default'] }}
+
+aaa authorization exec default {{ global['aaa_authorization']['exec']['default'] }}
+
+{% for rsrv in global['radius_servers'] %}
+radius-server host {{ rsrv['host'] }} vrf {{ rsrv['vrf'] }} key {{ rsrv['key'] }}
+{% endfor %}
+
+{% for httpsrc in global['ip_http_client_source_interfaces'] %}
+ip http client local-interface {{ httpsrc['name'] }} vrf {{ httpsrc['vrf'] }}
+{% endfor %}
+
+{% for radsrc in global['ip_radius_source_interfaces'] %}
+ip radius vrf {{ radsrc['vrf'] }} source-interface {{ radsrc['name'] }}
+{% endfor %}
+
+mac address-table aging-time {{ global['mac_address_table']['aging_time']}}
+
+arp aging timeout {{ global['arp']['aging']['timeout_default']}}
+
+{% for dns in global['name_servers'] %}
+ip name-server {{ dns }}
+{% endfor %}
+
+ip domain lookup vrf {{ global['ip_domain_lookup']['source_interfaces']['Management1']['vrf'] }} source-interface Management1
+
+
+{% for ntps in global['ntp']['servers'] %}
+ntp server vrf {{ ntps['vrf'] }} {{ ntps['name'] }}
+{% endfor %}
+
+clock timezone {{ global['clock']['timezone']}}
+
+vlan 4094
+name MLAG
+trunk group MLAGPeer
+
+no spanning-tree vlan 4094
+
+{% for item in interface[inventory_hostname]['interfaces'] %}
+{% if interface[inventory_hostname]['interfaces'][item]['mlag_peerlink'] == true %}
+interface {{ item }}
+description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
+channel-group 2000 mode active
+{% else %}
+
+interface {{ item }}
+description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
+
+{% endif %}
+
+{% endfor %}
+
+interface port-channel 2000
+switchport
+switchport mode trunk
+switchport trunk group MLAGPeer
+
+{% if interface[inventory_hostname]['mlag_side'] == 'A' %}
+int vlan 4094
+ip address 192.0.0.0/31
+
+mlag configuration
+domain-id workshop
+local-interface vlan4094
+peer-link po2000
+peer-address 192.0.0.1
+{% else %}
+int vlan 4094
+ip address 192.0.0.1/31
+
+mlag configuration
+domain-id workshop
+local-interface vlan4094
+peer-link po2000
+peer-address 192.0.0.0
+{% endif %}

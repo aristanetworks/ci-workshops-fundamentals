@@ -1,0 +1,14 @@
+---
+- hosts: spine1
+  gather_facts: false
+  tasks:
+
+  - name: Register variables
+    include_vars:
+      file: "{{lookup('env','PWD')}}/vars/ip_filter.yml"
+      name: ip_filter
+      
+  - name: Create configs
+    template:
+      src: "{{lookup('env','PWD')}}/templates/ip_filter.j2"
+      dest: "{{lookup('env','PWD')}}/configs/ipaddr/{{inventory_hostname}}_ipaddr_config.cfg"
