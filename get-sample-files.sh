@@ -5,6 +5,6 @@ then
     rm -rf /home/coder/project/labfiles/samplefiles
 fi
 cd /home/coder/project/labfiles/
-curl --remote-name-all https://github.com/aristanetworks/ci-workshops-fundamentals/samplefiles.tar
+curl --remote-name-all https://raw.githubusercontent.com/aristanetworks/ci-workshops-fundamentals/main/samplefiles.tar
 tar -xf samplefiles.tar
 rm samplefiles.tar
