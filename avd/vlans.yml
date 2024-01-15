@@ -6,7 +6,7 @@ vlans:
     name: Twenty
   - 30:
     name: Thirty
-  -40
+  -140
     name:Forty
-  -50
+  -150
     name:Fifty
