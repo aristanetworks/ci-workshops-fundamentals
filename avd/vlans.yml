@@ -6,3 +6,5 @@ vlans:
     name: Twenty
   - 30:
     name: Thirty
+  - 85:
+    name: EightyFive
