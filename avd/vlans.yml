@@ -1,7 +1,7 @@
 ---
 vlans:
-  - 10:
-    name: Ten
+  - 9:
+    name: Nine
   - 20:
     name: Twenty
   - 30:
