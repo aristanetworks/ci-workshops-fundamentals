@@ -7,8 +7,16 @@
     include_vars:
       file: "{{lookup('env','PWD')}}/vars/evpn.yml"
       name: vrf
-      
+
+  - name: Ensure directory exists
+    file:
+      path: "{{lookup('env','PWD')}}/configs/evpn/"
+      state: directory
+    delegate_to: localhost
+    run_once: true
+
   - name: Create configs
     template:
       src: "{{lookup('env','PWD')}}/templates/evpn.j2"
       dest: "{{lookup('env','PWD')}}/configs/evpn/{{inventory_hostname}}_vxlan_config.cfg"
+    delegate_to: localhost
