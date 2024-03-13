@@ -5,7 +5,7 @@ vxlan udp-port 4789
 
 {% for vrf,vrf_values in vrf.items() %}
 
-vxlan vrf {{vrf}} vni {{ vrf_values['l3vni']}}
+vxlan vrf {{ vrf }} vni {{ vrf_values['l3vni'] }}
 
 {% for vlan,vlan_values in vrf_values['vlans'].items() %}
 
