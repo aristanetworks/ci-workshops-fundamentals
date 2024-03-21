@@ -22,9 +22,9 @@ ip http client local-interface {{ httpsrc['name'] }} vrf {{ httpsrc['vrf'] }}
 ip radius vrf {{ radsrc['vrf'] }} source-interface {{ radsrc['name'] }}
 {% endfor %}
 
-mac address-table aging-time {{ global['mac_address_table']['aging_time']}}
+mac address-table aging-time {{ global['mac_address_table']['aging_time'] }}
 
-arp aging timeout {{ global['arp']['aging']['timeout_default']}}
+arp aging timeout {{ global['arp']['aging']['timeout_default'] }}
 
 {% for dns in global['name_servers'] %}
 ip name-server {{ dns }}
@@ -37,7 +37,7 @@ ip domain lookup vrf {{ global['ip_domain_lookup']['source_interfaces']['Managem
 ntp server vrf {{ ntps['vrf'] }} {{ ntps['name'] }}
 {% endfor %}
 
-clock timezone {{ global['clock']['timezone']}}
+clock timezone {{ global['clock']['timezone'] }}
 
 vlan 4094
 name MLAG
@@ -46,15 +46,10 @@ trunk group MLAGPeer
 no spanning-tree vlan 4094
 
 {% for item in interface[inventory_hostname]['interfaces'] %}
+interface {{ item }}
+description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
 {% if interface[inventory_hostname]['interfaces'][item]['mlag_peerlink'] == true %}
-interface {{ item }}
-description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
 channel-group 2000 mode active
-{% else %}
-
-interface {{ item }}
-description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
-
 {% endif %}
 
 {% endfor %}
