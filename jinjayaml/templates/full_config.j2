@@ -45,10 +45,10 @@ trunk group MLAGPeer
 
 no spanning-tree vlan 4094
 
-{% for item in interface[inventory_hostname]['interfaces'] %}
-interface {{ item }}
-description {{ interface[inventory_hostname]['interfaces'][item]['desc'] }}
-{% if interface[inventory_hostname]['interfaces'][item]['mlag_peerlink'] == true %}
+{% for name, intf in interface[inventory_hostname]['interfaces'].items() %}
+interface {{ name }}
+description {{ intf['desc'] }}
+{% if intf['mlag_peerlink'] == true %}
 channel-group 2000 mode active
 {% endif %}
 
