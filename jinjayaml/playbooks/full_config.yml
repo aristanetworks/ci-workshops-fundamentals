@@ -12,8 +12,16 @@
     include_vars:
       file: "{{lookup('env','PWD')}}/vars/interface.yml"
       name: interface
-      
+
+  - name: Ensure directory exists
+    file:
+      path: "{{lookup('env','PWD')}}/configs/full_config/"
+      state: directory
+    delegate_to: localhost
+    run_once: true
+
   - name: Create configs
     template:
       src: "{{lookup('env','PWD')}}/templates/full_config.j2"
       dest: "{{lookup('env','PWD')}}/configs/full_config/{{inventory_hostname}}_config.cfg"
+    delegate_to: localhost
