@@ -1,5 +1,7 @@
 {# Management Configuration #}
 
+hostname {{ inventory_hostname }}
+
 {% for httpsrc in global['ip_http_client_source_interfaces'] %}
 ip http client local-interface {{ httpsrc['name'] }} vrf {{ httpsrc['vrf'] }}
 {% endfor %}
