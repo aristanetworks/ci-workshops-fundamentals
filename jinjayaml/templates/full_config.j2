@@ -2,13 +2,7 @@
 
 hostname {{ inventory_hostname }}
 
-username admin priv {{ global['local_users']['admin']['privilege'] }} role {{ global['local_users']['admin']['role'] }} secret {{ global['local_users']['admin']['secret'] }}
 
-username noc priv {{ global['local_users']['noc']['privilege'] }} role {{ global['local_users']['noc']['role'] }} secret {{ global['local_users']['noc']['secret'] }}
-
-aaa authentication login default {{ global['aaa_authentication']['login']['default'] }}
-
-aaa authorization exec default {{ global['aaa_authorization']['exec']['default'] }}
 
 {% for rsrv in global['radius_servers'] %}
 radius-server host {{ rsrv['host'] }} vrf {{ rsrv['vrf'] }} key {{ rsrv['key'] }}
