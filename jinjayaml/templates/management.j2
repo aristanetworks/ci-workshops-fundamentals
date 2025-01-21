@@ -1,14 +1,8 @@
-{# Base Config Test #}
+{# Management Configuration #}
 
-hostname {{ inventory_hostname }}
-
-
-
-{% for rsrv in global['radius_servers'] %}
-radius-server host {{ rsrv['host'] }} vrf {{ rsrv['vrf'] }} key {{ rsrv['key'] }}
+{% for httpsrc in global['ip_http_client_source_interfaces'] %}
+ip http client local-interface {{ httpsrc['name'] }} vrf {{ httpsrc['vrf'] }}
 {% endfor %}
-
-
 
 {% for radsrc in global['ip_radius_source_interfaces'] %}
 ip radius vrf {{ radsrc['vrf'] }} source-interface {{ radsrc['name'] }}
@@ -30,5 +24,3 @@ ntp server vrf {{ ntps['vrf'] }} {{ ntps['name'] }}
 {% endfor %}
 
 clock timezone {{ global['clock']['timezone'] }}
-
-
