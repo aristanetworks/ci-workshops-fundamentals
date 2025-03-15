@@ -10,3 +10,5 @@ vlans:
     name: Forty
   - 50:
     name: Fifty
+  - 60:
+    name: Sixty
