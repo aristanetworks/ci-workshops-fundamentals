@@ -2,6 +2,7 @@
 # Data model to apply to all nodes
 
 # aaa authentication data model
+# CLI Syntax: aaa authentication login default group radius local
 aaa_authentication:
   login:
     default: group radius local
