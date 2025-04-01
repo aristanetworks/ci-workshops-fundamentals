@@ -1,2 +1,77 @@
 ---
 # Data model to apply to all nodes
+
+# aaa authentication data model
+aaa_authentication:
+  login:
+    default: group radius local
+
+# aaa authorization data model
+# CLI Syntax: aaa authorization exec default group radius local
+#
+# 
+# 
+
+# radius servers
+# Add additional host 192.168.1.11, vrf MGMT, key radiusserverkey
+radius_servers:
+  - host: 192.168.1.10
+    vrf: MGMT
+    key: radiusserverkey
+
+
+
+# HTTP Client source interface and VRF
+# CLI Syntax: ip http client local-interface <interface> vrf <vrfname>
+ip_http_client_source_interfaces:
+    - name: Management1
+      vrf: MGMT
+
+# RADIUS source interface and VRF
+# CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
+# 
+#   
+#     
+
+#MAC and ARP aging timers
+# mac_address_table:
+#   aging_time: 1800
+
+arp:
+  aging:
+    timeout_default: 1500
+
+# DNS Servers
+# Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
+
+# 
+#   
+#   
+#   
+
+# DNS lookup source interface
+ip_domain_lookup:
+  source_interfaces:
+    Management1:
+      vrf: MGMT
+
+# NTP Servers 
+ntp:
+  local_interface:
+    name: Management1
+    vrf: MGMT
+  servers:
+    - name: 0.north-america.pool.ntp.org
+      vrf: MGMT
+    - name: 1.north-america.pool.ntp.org
+      vrf: MGMT
+    - name: 2.north-america.pool.ntp.org
+      vrf: MGMT
+    - name: time.google.com
+      vrf: MGMT
+
+# Clock Timezone
+# Set timezone to: EST5EDT
+
+#
+#
