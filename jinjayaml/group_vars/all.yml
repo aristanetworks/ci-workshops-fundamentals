@@ -34,8 +34,8 @@ ip_http_client_source_interfaces:
 #     
 
 #MAC and ARP aging timers
-# mac_address_table:
-#   aging_time: 1800
+mac_address_table:
+  aging_time: 1800
 
 arp:
   aging:
