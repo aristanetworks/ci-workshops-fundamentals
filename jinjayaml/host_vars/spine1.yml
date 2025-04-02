@@ -4,3 +4,15 @@
 # Interfaces
 
 # VLANs
+
+vlans:
+  - id: 10
+    name: "ten"
+
+svis:
+  - id: 10
+    desc: "ten"
+    host_ip: "10.10.10.2/24"
+    vip: "10.10.10.1"
+
+
