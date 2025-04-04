@@ -1,10 +1,6 @@
-{# Interface Configuration #}
-
-{% for interface in interfaces %}
-interface {{interface}} 
-description {{interfaces[interface].descr}}
-switchport mode {{interfaces[interface].mode}}
-{% if interfaces[interface].mode == 'access' %}
-switchport access {{interfaces[interface].vlan}}
-{% endif %}
-{% endfor %}
+{# Interface Configuration                           #}
+{# CLI Syntax                                        #}
+{# interface <intf name>                             #}
+{#   description <description>                       #}
+{#   switchport mode <mode>                          #}
+{# (if access port) switchport access vlan <vlan>    #}

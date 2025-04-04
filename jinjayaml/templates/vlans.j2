@@ -1,15 +1,13 @@
 {# VLAN Configuration #}
 
-{# l2 vlans #}
-{% for l2vlan in vlans %}
-vlan {{ l2vlan.id }}
-name {{ l2vlan.name }}
-{% endfor %}
+{# l2 vlans               #}
+{# CLI Syntax             #}
+{# vlan <vlanID>          #}
+{# name <vlanname>        #}
 
-{# l3 vlans #}
-{% for l3vlan in svis %}
-interface vlan {{ l3vlan.id }}
-description {{ l3vlan.desc }}
-ip address {{ l3vlan.host_ip }}
-ip virtual-router address {{ l3vlan.vip }}
-{% endfor %}
+
+{# l3 vlans                            #}
+{# interface vlan <vlanID>             #}
+{# description <description>           #}
+{# ip address <host_ip>                #}
+{# ip virtual-router address <vip>     #}
