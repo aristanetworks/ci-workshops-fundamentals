@@ -1,8 +1,8 @@
 {# AAA Configuration #}
 
 {# local users #}
-{% for users, users_data in local_users %}
-username {{ users }} privilege {{ users_data.privilege }} role {{ users_data.rol }} secret {{ users_data.secret }}
+{% for users, users_data in local_users.items() %}
+username {{ users }} privilege {{ users_data.privilege }} role {{ users_data.role }} secret {{ users_data.secret }}
 {% endfor %}
 
 {# aaa authentication #}
