@@ -1,5 +1,15 @@
 ---
 # Data model to apply to all nodes
+# local users
+local_users:
+  admin:
+    privilege: 15
+    role: network-admin
+    secret: aristaadmin
+  noc:
+    privilege: 1
+    role: network-operator
+    secret: aristaops
 
 # aaa authentication data model
 # CLI Syntax: aaa authentication login default group radius local
