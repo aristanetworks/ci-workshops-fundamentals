@@ -1,0 +1,16 @@
+{# AAA Configuration #}
+
+{# local users #}
+{% for users, users_data in local_users.items() %}
+username {{ users }} privilege {{ users_data.privilege }} role {{ users_data.role }} secret {{ users_data.secret }}
+{% endfor %}
+
+{# aaa authentication #}
+aaa authentication login default {{ aaa_authentication.login.default }}
+
+{# aaa authorization #}
+{# CLI Syntax: aaa authorization exec default group radius local #}
+
+
+{# radius servers #}
+{# CLI Syntax: radius-server host <host IP> vrf <vrfname> key <radkey> #}
