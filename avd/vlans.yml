@@ -6,3 +6,14 @@ vlans:
     name: Twenty
   - 30:
     name: Thirty
+---
+vlans:
+  - 10:
+    name: Ten
+  - 20:
+    name: Twenty
+  - 30:
+    name: Thirty
+  - 40:
+    name: Forty
+    
