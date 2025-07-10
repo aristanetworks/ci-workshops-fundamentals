@@ -1,17 +1,7 @@
 ---
-- hosts: spine1,spine2,leaf1,leaf2
+- hosts: all
   gather_facts: false
   tasks:
-
-  - name: Register variables
-    include_vars:
-      file: "{{lookup('env','PWD')}}/vars/global.yml"
-      name: global
-
-  - name: Register variables
-    include_vars:
-      file: "{{lookup('env','PWD')}}/vars/interface.yml"
-      name: interface
 
   - name: Ensure directory exists
     file:

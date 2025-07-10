@@ -1,4 +1,5 @@
 ---
+# Data model to apply to all nodes
 # local users
 local_users:
   admin:
@@ -10,30 +11,38 @@ local_users:
     role: network-operator
     secret: aristaops
 
-# aaa authentication and authorization
+# aaa authentication data model
+# CLI Syntax: aaa authentication login default group radius local
 aaa_authentication:
   login:
     default: group radius local
 
-aaa_authorization:
-  exec:
-    default: group radius local
+# aaa authorization data model
+# CLI Syntax: aaa authorization exec default group radius local
+#
+# 
+# 
 
 # radius servers
+# Add additional host 192.168.1.11, vrf MGMT, key radiusserverkey
 radius_servers:
   - host: 192.168.1.10
     vrf: MGMT
     key: radiusserverkey
 
+
+
 # HTTP Client source interface and VRF
+# CLI Syntax: ip http client local-interface <interface> vrf <vrfname>
 ip_http_client_source_interfaces:
     - name: Management1
       vrf: MGMT
 
 # RADIUS source interface and VRF
-ip_radius_source_interfaces:
-  - name: Management1
-    vrf: MGMT
+# CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
+# 
+#   
+#     
 
 #MAC and ARP aging timers
 mac_address_table:
@@ -44,18 +53,20 @@ arp:
     timeout_default: 1500
 
 # DNS Servers
-name_servers:
-  - 1.1.1.1
-  - 8.8.8.8
-  - 4.4.4.4
+# Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
 
-# DNS lookup source interface (Servers defined in 1L2P.yml)
+# 
+#   
+#   
+#   
+
+# DNS lookup source interface
 ip_domain_lookup:
   source_interfaces:
     Management1:
       vrf: MGMT
 
-# NTP Servers (source interface defined in group specific YML files (CORE, ACCESS, MGMT, INET)
+# NTP Servers 
 ntp:
   local_interface:
     name: Management1
@@ -70,5 +81,8 @@ ntp:
     - name: time.google.com
       vrf: MGMT
 
-clock:
-  timezone: "America/Detroit"
+# Clock Timezone
+# Set timezone to: EST5EDT
+
+#
+#

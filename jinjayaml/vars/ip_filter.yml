@@ -1,7 +1,0 @@
----
-spine1:
-  interfaces:
-    Ethernet1:
-      ipv4: 1.1.1.1/26
-    Ethernet2:
-      ipv4: 2.2.2.2/8

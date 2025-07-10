@@ -1,0 +1,34 @@
+{# Management Configuration #}
+
+{# device hostname #}
+hostname {{ inventory_hostname }}
+
+{# ip http client source interfaces #}
+{% for httpsrc in ip_http_client_source_interfaces %}
+ip http client local-interface {{ httpsrc.name }} vrf {{ httpsrc.vrf }}
+{% endfor %}
+
+{# ip radius source interfaces #}
+{# CLI Syntax: ip radius vrf <vrfname> source-interface <intf name> #}
+
+
+{# mac address-table aging time #}
+mac address-table aging-time {{ mac_address_table.aging_time }}
+
+{# arp aging timeout #}
+arp aging timeout {{ arp.aging.timeout_default }}
+
+{# dns servers #}
+{# CLI Syntax: ip name-server <serverIP> #}
+
+
+{# ip domain lookup interface #}
+ip domain lookup vrf {{ ip_domain_lookup.source_interfaces.Management1.vrf }} source-interface Management1
+
+{# ntp servers #}
+{% for ntps in ntp.servers %}
+ntp server vrf {{ ntps.vrf }} {{ ntps.name }}
+{% endfor %}
+
+{# clock timezone #}
+{# CLI Syntax: clock timezone <timzeon> #}
