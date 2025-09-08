@@ -1,0 +1,374 @@
+[33mcommit f5a029f240282dc935e47428c60373602938141c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32madd-vlan-40[m[33m)[m
+Author: John Clarke <john.art.clarke@datanetworks.uk>
+Date:   Mon Sep 8 12:45:22 2025 +0100
+
+    added vlan 40
+
+[33mcommit bc6c2232eef0502e8f6bc83d355311652851aa36[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Jordan Hemann <59902439+RestlessWanderer@users.noreply.github.com>
+Date:   Mon May 5 13:19:24 2025 -0400
+
+    Update content for new jinja/yaml section rewrite (#710)
+    
+    * Add aaa template
+    
+    * Update templtaes and data models
+    
+    * update templates
+    
+    * update data models
+    
+    * update all.yml
+    
+    * update all.yml
+    
+    * remove old vars
+    
+    * update content
+    
+    * finish yaml data model
+    
+    * remove old files
+    
+    * remove moar old files
+    
+    * remove moar old files
+    
+    * update j2 templates
+    
+    * final test
+    
+    * modify makefile
+    
+    * update ansible inventory
+    
+    * fix issues
+
+[33mcommit 191661633b4b39973b3bc56c1442a4159a9e3af5[m
+Merge: e8d9474 9342b81
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Mar 13 15:10:19 2024 -0400
+
+    Merge pull request #320 from JulioPDX/jinja-yaml-fix
+    
+    Jinja YAML updates
+
+[33mcommit 9342b811ddcc23ea964241d5a2fee70432348f74[m
+Author: JulioPDX <juliop503@gmail.com>
+Date:   Wed Mar 13 12:02:24 2024 -0700
+
+    Make sure directories exists
+
+[33mcommit 29b28d802568bcd5ae02e35de03cf48056183173[m
+Author: JulioPDX <juliop503@gmail.com>
+Date:   Wed Mar 13 11:58:59 2024 -0700
+
+    updates to spacing and full config play
+
+[33mcommit e8d9474b6db8cf675a96faa630a20a097d2ae916[m
+Merge: 8e0c116 8893c0e
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Jul 19 08:43:05 2023 -0400
+
+    Merge pull request #6 from aristanetworks/fix-indents-vlans
+    
+    fixed indents
+
+[33mcommit 8893c0e50ed208fb7cac6fe1bb1cf93b2bfc918b[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Wed Jul 19 08:40:00 2023 -0400
+
+    fixed indents
+
+[33mcommit 8e0c116250370c28be874499a92a89d6e46e8598[m
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Mon Jul 17 15:38:24 2023 -0400
+
+    removed vlan 40 for lab reset
+
+[33mcommit dbf988165e6a58f04df0ed6dcc8c12c117157914[m
+Merge: 4f05700 eefacf6
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Mon Jul 17 15:33:56 2023 -0400
+
+    Merge pull request #4 from mthiel117/add-vlan-40
+    
+    added vlan 40
+
+[33mcommit eefacf6f4c823fac5ed40b03950ef64504fe001f[m
+Author: arista <atd-help@arista.com>
+Date:   Mon Jul 17 19:13:38 2023 +0000
+
+    added vlan 40
+
+[33mcommit 4f05700c2f9ba00fb54d22e3eb07af1d2d66326e[m
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Mon Jul 17 12:56:38 2023 -0400
+
+    updated Title for Arista networks repo (#3)
+
+[33mcommit 74e6e73e52307b94b214496b3295f56fdeccb99f[m
+Merge: 983792b f5d9b40
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Sun Jul 16 23:45:14 2023 -0400
+
+    Merge pull request #2 from aristanetworks/minor-fix
+    
+    Correcting download link
+
+[33mcommit f5d9b40c9d3fc7c63eee8aa3897424b373aae029[m
+Author: JulioPDX <34353177+JulioPDX@users.noreply.github.com>
+Date:   Sun Jul 16 20:42:44 2023 -0700
+
+    Correcting download link
+
+[33mcommit 983792bd55b31afcd2fa2050438b2cc0a0c07980[m
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Sun Jul 16 22:26:53 2023 -0400
+
+    add samplefiles for Git (#1)
+
+[33mcommit bdb8a5349b09e3145dc0cfa8f8680c55d8fd03a1[m
+Merge: 5694d4b 8b27f3d
+Author: Mitch Vaughan <mitch.vaughan@gmail.com>
+Date:   Tue May 23 11:57:41 2023 -0400
+
+    Merge pull request #139 from PacketAnglers/jinjaymlcontent
+    
+    Add jinja yaml demo content
+
+[33mcommit 8b27f3d07270c22218548cc0b5c8e92f15add261[m
+Author: Jordan Hemann <jhemann@arista.com>
+Date:   Tue May 23 10:36:22 2023 -0400
+
+    Add jinja yaml demo content
+
+[33mcommit 5694d4bf83f5461108764fa715adbbbd091fe1ca[m
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Thu Mar 9 13:01:23 2023 -0500
+
+    removed vlan 40
+    
+    removed vlan 40 after the workshop to reset Lab
+
+[33mcommit b7b3da2bd7a429dc48810e7b812b18520da36547[m
+Merge: 6363903 4ff1834
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Thu Mar 9 11:30:24 2023 -0500
+
+    Merge pull request #63 from dstumbaugh/add-vlan-40
+    
+    new vlan 40
+
+[33mcommit 4ff1834aea73f6f5e18100f941b052465ed8c222[m
+Author: Dan Stumbaugh <danstumbaugh@arista.com>
+Date:   Thu Mar 9 16:23:30 2023 +0000
+
+    new vlan 40
+
+[33mcommit 6363903c2b70c085c5a8ae8a56cfe5b7f514a9f1[m
+Merge: ceb6858 8b51705
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Mon Mar 6 12:13:33 2023 -0500
+
+    Merge pull request #50 from PacketAnglers/remove-vlan-40
+    
+    remove vlan 40 to reset lab
+
+[33mcommit 8b51705e4468cfd6490df2c2f5814b224434d108[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Mon Mar 6 12:09:21 2023 -0500
+
+    remove vlan 40 to reset lab
+
+[33mcommit ceb6858e14c1ee93b1a287195e833ec1b6687823[m
+Merge: 6d3ae61 5bafebb
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Thu Mar 2 11:23:53 2023 -0500
+
+    Merge pull request #26 from TengokuNoSenshi/add-vlan-40
+    
+    added vlan40
+
+[33mcommit 5bafebb78c581d4df8303dab1c5924ac9350d2c5[m
+Author: Joe Suhayda <jwsuhayda@aep.com>
+Date:   Thu Mar 2 16:15:10 2023 +0000
+
+    added vlan40
+
+[33mcommit 6d3ae6134bbcdbe2a2245192ede88e575c45c39f[m
+Merge: 68e3ab6 36e0e0a
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Mar 1 15:49:40 2023 -0500
+
+    Merge pull request #19 from PacketAnglers/ansible-update
+    
+    Ansible update
+
+[33mcommit 36e0e0ad2928967941df74c2600830e9aaad4524[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 20:49:01 2023 +0000
+
+    ansible content update
+
+[33mcommit 795caf776680656f6bd5e23d224a5fb6b9cc1340[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 20:40:45 2023 +0000
+
+    update ansible content
+
+[33mcommit 68e3ab682d6a2a739355d8d22278ee6be8453a04[m
+Merge: 160d702 3c45b76
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Mar 1 12:40:20 2023 -0500
+
+    Merge pull request #18 from PacketAnglers/ansible-update
+    
+    placeholder for ansible_ssh_pass
+
+[33mcommit 3c45b765b9b418ba6e0ee95800543e001317699f[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 17:38:49 2023 +0000
+
+    placeholder for ansible_ssh_pass
+
+[33mcommit 160d7027e5d4a453a6c6400fb98416d249f00178[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 17:35:57 2023 +0000
+
+    modify banner_text variable
+
+[33mcommit f14698013608242e9edfdd3921a5b60c2cc02a5e[m
+Merge: 13270cf 0c869c3
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Mar 1 10:45:39 2023 -0500
+
+    Merge pull request #17 from PacketAnglers/ansible-updates
+    
+    ansible content update
+
+[33mcommit 0c869c348d451385401074956ec5eba169360e67[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 15:32:50 2023 +0000
+
+    ansible content update
+
+[33mcommit 13270cf9590d4c368d0e14924642bde3db748d6d[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 15:29:45 2023 +0000
+
+    ansible content updates
+
+[33mcommit dd7650539e47ab54d5229c0000e897c9ebaa4cca[m
+Merge: e13459f 2e7239e
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Wed Mar 1 09:09:40 2023 -0500
+
+    Merge pull request #16 from PacketAnglers/ansible-update
+    
+    ansible content update
+
+[33mcommit 2e7239ea9aed24311ce5fa63fd497e053fbc6d01[m
+Author: arista <atd-help@arista.com>
+Date:   Wed Mar 1 14:02:44 2023 +0000
+
+    ansible content update
+
+[33mcommit e13459fe6fa9753c550f568728b8fb232b8b04e8[m
+Merge: 6ef79cd be60b37
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Tue Feb 28 11:37:29 2023 -0500
+
+    Merge pull request #13 from PacketAnglers/ansible-updates3
+    
+    add deploy_banner.yml
+
+[33mcommit be60b370cc33049d4a52da4a7b5cdb95eb766e4f[m
+Author: arista <atd-help@arista.com>
+Date:   Tue Feb 28 16:20:31 2023 +0000
+
+    add deploy_banner.yml
+
+[33mcommit 6ef79cd9676cbc3484f124566c7c853cc527ab43[m
+Merge: 91393d5 282d7a5
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Tue Feb 28 07:47:50 2023 -0500
+
+    Merge pull request #12 from PacketAnglers/ansible-updates2
+    
+    update ansible.cfg and mlag playbook
+
+[33mcommit 282d7a5405420f1e25a4ab26593cb4ca93020830[m
+Author: arista <atd-help@arista.com>
+Date:   Tue Feb 28 05:16:16 2023 +0000
+
+    update ansible.cfg and mlag playbook
+
+[33mcommit 91393d53872e421ae19aea5586819885722b140b[m
+Merge: f2982ea fcc56cf
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Mon Feb 27 20:02:35 2023 -0500
+
+    Merge pull request #11 from PacketAnglers/ansible-updates
+    
+    Automation Workshop Ansible Content
+
+[33mcommit fcc56cfbfbf617f0ef83f739dfcb664ba2be62ca[m
+Author: arista <atd-help@arista.com>
+Date:   Tue Feb 28 00:50:35 2023 +0000
+
+    ansible content updates
+
+[33mcommit 25700e33ba427f3c07ff908e884a089468786d28[m
+Author: MitchV85 <mitch.vaughan@gmail.com>
+Date:   Mon Feb 27 18:51:02 2023 +0000
+
+    ansible content updates
+
+[33mcommit 1820a4106ec6b03e80467b7dc0aa4b01d1b77ea2[m
+Author: MitchV85 <mitch.vaughan@gmail.com>
+Date:   Mon Feb 27 18:14:33 2023 +0000
+
+    update ansible content
+
+[33mcommit eeec3663f6c3562b8cdd50c257230239fb3828d7[m
+Author: MitchV85 <mitch.vaughan@gmail.com>
+Date:   Mon Feb 27 18:07:51 2023 +0000
+
+    mlag role
+
+[33mcommit 53ac7c34fcaf17767766e0442c50b8e5bb4a4cdf[m
+Author: arista <atd-help@arista.com>
+Date:   Mon Feb 27 16:48:11 2023 +0000
+
+    ansible content build
+
+[33mcommit f2982ea11ab1a9fbcc105eea21c403d26f03e934[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Wed Feb 15 10:36:49 2023 -0500
+
+    reset repo to base
+
+[33mcommit c80258e4fc3c33b0a37d35221ef7cc9d2c339377[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Tue Jan 10 15:41:17 2023 -0500
+
+    added vlan 40
+
+[33mcommit 10079c0ca4a3b2f2d47047d6ba2da11c4c76b079[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Tue Jan 10 14:34:00 2023 -0500
+
+    fixed typos
+
+[33mcommit a4ecb3aa9ad808aae68802c895a0cd704e73f544[m
+Author: Mark Thiel <mthiel117@gmail.com>
+Date:   Tue Jan 10 14:33:17 2023 -0500
+
+    added initial content
+
+[33mcommit 03171bd7ebe0d68ba9195032fc6d01375b53135e[m
+Author: Mark Thiel <25393619+mthiel117@users.noreply.github.com>
+Date:   Tue Jan 10 11:22:30 2023 -0500
+
+    Initial commit

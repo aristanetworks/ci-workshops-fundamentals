@@ -29,6 +29,9 @@ radius_servers:
   - host: 192.168.1.10
     vrf: MGMT
     key: radiusserverkey
+  - host: 192.168.1.11
+    vrf: MGMT
+    key: newradkey
 
 
 
@@ -40,9 +43,9 @@ ip_http_client_source_interfaces:
 
 # RADIUS source interface and VRF
 # CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
-# 
-#   
-#     
+ip_radius_source_interfaces:
+    - name: Management1
+      vrf: MGMT 
 
 #MAC and ARP aging timers
 mac_address_table:
@@ -55,10 +58,10 @@ arp:
 # DNS Servers
 # Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
 
-# 
-#   
-#   
-#   
+name_servers:
+  - 1.1.1.1
+  - 4.4.4.4
+  - 8.8.8.8 
 
 # DNS lookup source interface
 ip_domain_lookup:
@@ -84,5 +87,5 @@ ntp:
 # Clock Timezone
 # Set timezone to: EST5EDT
 
-#
-#
+clock:
+  timezone: EST5EDT
