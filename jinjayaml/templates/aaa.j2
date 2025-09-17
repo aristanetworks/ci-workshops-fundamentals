@@ -10,7 +10,10 @@ aaa authentication login default {{ aaa_authentication.login.default }}
 
 {# aaa authorization #}
 {# CLI Syntax: aaa authorization exec default group radius local #}
-
+aaa authorization exec default {{ aaa_authorization.exec.default }}
 
 {# radius servers #}
 {# CLI Syntax: radius-server host <host IP> vrf <vrfname> key <radkey> #}
+{% for rsrv in radius_servers %}
+radius-server host {{ rsrv.host }} vrf {{ rsrv.vrf }} key {{ rsrv.key }}
+{% endfor %}
