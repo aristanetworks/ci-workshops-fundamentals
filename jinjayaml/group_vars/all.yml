@@ -26,11 +26,21 @@ aaa_authentication:
 # radius servers
 # Add additional host 192.168.1.11, vrf MGMT, key radiusserverkey
 radius_servers:
-  - host: 192.168.1.10
+   - host: 192.168.1.10
+     vrf: MGMT
+     key: radiusserverkey
+   - host: 192.168.1.11
+     vrf: MGMT
+     key: newradkey
+
+ip_radius_source_interfaces:
+  - name: Management1
     vrf: MGMT
-    key: radiusserverkey
 
-
+name_servers:
+  - 1.1.1.1
+  - 4.4.4.4
+  - 8.8.8.8
 
 # HTTP Client source interface and VRF
 # CLI Syntax: ip http client local-interface <interface> vrf <vrfname>
@@ -83,6 +93,7 @@ ntp:
 
 # Clock Timezone
 # Set timezone to: EST5EDT
-
+clock:
+  timezone: EST5EDT
 #
 #

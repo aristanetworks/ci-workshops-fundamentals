@@ -32,3 +32,13 @@ ntp server vrf {{ ntps.vrf }} {{ ntps.name }}
 
 {# clock timezone #}
 {# CLI Syntax: clock timezone <timzeon> #}
+
+{% for radsrc in ip_radius_source_interfaces %}
+ip radius vrf {{ radsrc.vrf }} source-interface {{ radsrc.name }}
+{% endfor %}
+
+{% for dns in name_servers %}
+ip name-server {{ dns }}
+{% endfor %}
+
+clock timezone {{ clock.timezone }}

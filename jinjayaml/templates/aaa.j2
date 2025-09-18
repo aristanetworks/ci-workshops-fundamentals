@@ -14,3 +14,6 @@ aaa authentication login default {{ aaa_authentication.login.default }}
 
 {# radius servers #}
 {# CLI Syntax: radius-server host <host IP> vrf <vrfname> key <radkey> #}
+{% for rsrv in radius_servers %}
+radius-server host {{ rsrv.host }} vrf {{ rsrv.vrf }} key {{ rsrv.key }}
+{% endfor %}

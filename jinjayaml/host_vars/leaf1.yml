@@ -18,7 +18,7 @@ interfaces:
     descr: "To_Leaf2"
     mode: "trunk"
 
-
 # VLANs
-
-
+vlans:
+  - id: 10
+    name: "ten"
