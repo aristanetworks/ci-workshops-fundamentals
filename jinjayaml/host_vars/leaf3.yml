@@ -4,3 +4,6 @@
 # Interfaces
 
 # VLANs
+vlans:
+  - id: 20
+    name: "twenty"
