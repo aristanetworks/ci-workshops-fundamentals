@@ -5,20 +5,23 @@
 
 interfaces:
   Ethernet1:
-    descr: "To_Spine1"
+    desc: "To_Spine1"
     mode: "trunk"
   Ethernet2:
-    descr: "To_Spine2"
+    desc: "To_Spine2"
     mode: "trunk"
   Ethernet10:
-    descr: "Host1"
+    desc: "Host1"
     mode: "access"
     vlan: 10
   Ethernet48:
-    descr: "To_Leaf2"
+    desc: "To_Leaf2"
     mode: "trunk"
 
 
 # VLANs
+vlan:
+  - id: 10
+    name: "ten"
 
 

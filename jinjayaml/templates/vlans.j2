@@ -4,10 +4,23 @@
 {# CLI Syntax             #}
 {# vlan <vlanID>          #}
 {# name <vlanname>        #}
-
-
+{% if vlan is defined %}
+{% for vlandets in vlan%}
+vlan {{ vlandets.id }}
+name {{ vlandets.name }}
+{% endfor %}
+{% endif %}
 {# l3 vlans                            #}
 {# interface vlan <vlanID>             #}
 {# description <description>           #}
 {# ip address <host_ip>                #}
 {# ip virtual-router address <vip>     #}
+
+{% if svis is defined %}
+{% for svidets in svis %}
+interface vlan {{ svidets.id }}
+description {{ svidets.desc }}
+ip address {{ svidets.host_ip }}
+ip virtual-router address {{ svidets.vip }}
+{% endfor %}
+{% endif%}

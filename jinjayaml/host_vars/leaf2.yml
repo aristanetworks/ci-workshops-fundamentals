@@ -4,3 +4,17 @@
 # Interfaces
 
 # VLANs
+vlan: 
+  - id: 10
+    name: "ten"
+interfaces:
+  Ethernet1:
+    desc: "To_Spine1"
+    mode: "trunk"
+  Ethernet2:
+    desc: "To_Spine2"
+    mode: "trunk"
+  Ethernet48:
+    desc: "To_Leaf1"
+    mode: "trunk"
+    

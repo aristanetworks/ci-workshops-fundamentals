@@ -19,7 +19,9 @@ aaa_authentication:
 
 # aaa authorization data model
 # CLI Syntax: aaa authorization exec default group radius local
-#
+aaa_authorization:
+  exec:
+    default: group radius local
 # 
 # 
 
@@ -29,6 +31,9 @@ radius_servers:
   - host: 192.168.1.10
     vrf: MGMT
     key: radiusserverkey
+  - host: 192.168.1.11
+    vrf: MGMT
+    key: newradkey
 
 
 
@@ -40,7 +45,10 @@ ip_http_client_source_interfaces:
 
 # RADIUS source interface and VRF
 # CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
-# 
+ip_radius_source_interface:
+  - name: Management1
+    vrf: MGMT
+  
 #   
 #     
 
@@ -54,7 +62,10 @@ arp:
 
 # DNS Servers
 # Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
-
+dns_servers:
+  - 1.1.1.1
+  - 4.4.4.4
+  - 8.8.8.8
 # 
 #   
 #   
@@ -83,6 +94,7 @@ ntp:
 
 # Clock Timezone
 # Set timezone to: EST5EDT
-
+clock:
+  timezone: EST5EDT
 #
 #
