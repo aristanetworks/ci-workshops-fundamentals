@@ -7,3 +7,4 @@ vlans:
   - 30:
     name: Thirty
     toto
+    test2
