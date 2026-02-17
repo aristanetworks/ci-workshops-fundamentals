@@ -9,7 +9,9 @@ ip http client local-interface {{ httpsrc.name }} vrf {{ httpsrc.vrf }}
 {% endfor %}
 
 {# ip radius source interfaces #}
-{# CLI Syntax: ip radius vrf <vrfname> source-interface <intf name> #}
+{% for radsrc in ip_radius_source_interfaces %}
+ip radius vrf {{ radsrc.vrf }} source-interface {{ radsrc.name }}
+{% endfor %}
 
 
 {# mac address-table aging time #}
@@ -19,7 +21,9 @@ mac address-table aging-time {{ mac_address_table.aging_time }}
 arp aging timeout {{ arp.aging.timeout_default }}
 
 {# dns servers #}
-{# CLI Syntax: ip name-server <serverIP> #}
+{% for dns in name_servers %}
+ip name-server {{ dns }}
+{% endfor %}
 
 
 {# ip domain lookup interface #}
@@ -31,4 +35,4 @@ ntp server vrf {{ ntps.vrf }} {{ ntps.name }}
 {% endfor %}
 
 {# clock timezone #}
-{# CLI Syntax: clock timezone <timzeon> #}
+clock timezone {{ clock.timezone }}
