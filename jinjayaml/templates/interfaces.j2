@@ -1,6 +1,8 @@
-{# Interface Configuration                           #}
-{# CLI Syntax                                        #}
-{# interface <intf name>                             #}
-{#   description <description>                       #}
-{#   switchport mode <mode>                          #}
-{# (if access port) switchport access vlan <vlan>    #}
+{% for intf, intf_data in interfaces.items() %}
+interface {{ intf }}
+description {{ intf_data.descr }}
+switchport mode {{ intf_data.mode }}
+{% if intf_data.mode == 'access' %}
+switchport access vlan {{ intf_data.vlan }}
+{% endif %}
+{% endfor %}
