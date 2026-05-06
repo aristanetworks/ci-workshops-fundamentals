@@ -20,5 +20,7 @@ interfaces:
 
 
 # VLANs
-
+vlans:
+  - id: 10
+    name: "ten"
 
