@@ -2,5 +2,36 @@
 # SPINE2 specific data model
 
 # Interfaces
+interfaces:
+  Ethernet1:
+    descr: "To_Leaf1"
+    mode: "trunk"
+  Ethernet2:
+    descr: "To_Leaf2"
+    mode: "trunk"
+  Ethernet3:
+    descr: "To_Leaf3"
+    mode: "trunk"
+  Ethernet4:
+    descr: "To_Leaf4"
+    mode: "trunk"
+  Ethernet48:
+    descr: "To_Spine1"
+    mode: "trunk"
 
 # VLANs
+vlans:
+  - id: 10
+    name: "ten"
+  - id: 20
+    name: "twenty"
+
+svis:
+  - id: 10
+    desc: "ten"
+    host_ip: "10.10.10.3/24"
+    vip: "10.10.10.1"
+  - id: 20
+    desc: "twenty"
+    host_ip: "20.20.20.3/24"
+    vip: "20.20.20.1"
