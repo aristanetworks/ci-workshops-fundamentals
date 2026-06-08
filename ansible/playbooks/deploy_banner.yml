@@ -1,20 +1,20 @@
 ---
 
-- name: Deploy New Banner to EOS Switches
+Deploy New Banner to EOS Switches
   hosts: WORKSHOP_FABRIC
 
   tasks:
 
-    - name: Gather EOS Facts
+    Gather EOS Facts
       arista.eos.eos_facts:
         gather_subset: all
       register: facts
 
-    - name: Debugging - Check Facts Output
+    Debugging - Check Facts Output
       debug:
         msg: "{{ facts }}"
 
-    - name: configure the login banner
+    configure the login banner
       arista.eos.eos_banner:
         banner: motd
         text: |

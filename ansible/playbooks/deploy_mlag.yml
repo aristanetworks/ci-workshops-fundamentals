@@ -1,10 +1,10 @@
 ---
 
-- name: Deploy MLAG Confguration to Arista Switches
+Deploy MLAG Confguration to Arista Switches
   hosts: S1_LEAFS,S1_SPINES
 
   tasks:
 
-    - name: Deploy MLAG Configuration
+    Deploy MLAG Configuration
       import_role:
         name: roles/mlag

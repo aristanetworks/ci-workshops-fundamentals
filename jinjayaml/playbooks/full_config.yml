@@ -3,14 +3,14 @@
   gather_facts: false
   tasks:
 
-  - name: Ensure directory exists
+  Ensure directory exists
     file:
       path: "{{lookup('env','PWD')}}/configs/full_config/"
       state: directory
     delegate_to: localhost
     run_once: true
 
-  - name: Create configs
+  Create configs
     template:
       src: "{{lookup('env','PWD')}}/templates/full_config.j2"
       dest: "{{lookup('env','PWD')}}/configs/full_config/{{inventory_hostname}}_config.cfg"

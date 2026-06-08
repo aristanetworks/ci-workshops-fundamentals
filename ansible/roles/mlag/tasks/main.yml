@@ -1,6 +1,6 @@
 ---
 
-- name: Create required output directory if not already present
+Create required output directory if not already present
   tags: ['always', 'build']
   ansible.builtin.file:
     path: ../configs/mlag
@@ -9,7 +9,7 @@
   delegate_to: localhost
   run_once: true
 
-- name: Generate MLAG Configs
+Generate MLAG Configs
   template:
     src: mlag.j2
     dest: configs/mlag/{{ inventory_hostname }}_mlag.cfg
@@ -17,7 +17,7 @@
   register: mlag_configs
   when: mlag.enabled is defined and mlag.enabled
 
-- name: Validate MLAG Configurations against Device(s)
+Validate MLAG Configurations against Device(s)
   arista.eos.eos_config:
     src: ../configs/mlag/{{ inventory_hostname}}_mlag.cfg
     replace: line
@@ -25,7 +25,7 @@
   tags: ['deploy', 'validate']
   when: mlag_configs is not skipped
 
-- name: Push MLAG configuration to device(s)
+Push MLAG configuration to device(s)
   arista.eos.eos_config:
     src: ../configs/mlag/{{ inventory_hostname }}_mlag.cfg
     replace: line

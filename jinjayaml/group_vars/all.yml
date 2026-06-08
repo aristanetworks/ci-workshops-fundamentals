@@ -19,7 +19,9 @@ aaa_authentication:
 
 # aaa authorization data model
 # CLI Syntax: aaa authorization exec default group radius local
-#
+aaa_authorization:
+  exec:
+    default: group radius local
 # 
 # 
 
@@ -29,20 +31,23 @@ radius_servers:
   - host: 192.168.1.10
     vrf: MGMT
     key: radiusserverkey
-
+  - host: 192.168.1.11
+    vrf: MGMT
+    key: newradkey
 
 
 # HTTP Client source interface and VRF
 # CLI Syntax: ip http client local-interface <interface> vrf <vrfname>
 ip_http_client_source_interfaces:
-    - name: Management1
+    Management1
       vrf: MGMT
 
 # RADIUS source interface and VRF
 # CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
-# 
-#   
-#     
+ip_radius_source_interfaces:
+  Management1
+    vrf: MGMT
+    
 
 #MAC and ARP aging timers
 mac_address_table:
@@ -55,10 +60,10 @@ arp:
 # DNS Servers
 # Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
 
-# 
-#   
-#   
-#   
+name_servers:
+  - 1.1.1.1
+  - 4.4.4.4
+  - 8.8.8.8
 
 # DNS lookup source interface
 ip_domain_lookup:
@@ -72,17 +77,16 @@ ntp:
     name: Management1
     vrf: MGMT
   servers:
-    - name: 0.north-america.pool.ntp.org
+    0.north-america.pool.ntp.org
       vrf: MGMT
-    - name: 1.north-america.pool.ntp.org
+    1.north-america.pool.ntp.org
       vrf: MGMT
-    - name: 2.north-america.pool.ntp.org
+    2.north-america.pool.ntp.org
       vrf: MGMT
-    - name: time.google.com
+    time.google.com
       vrf: MGMT
 
 # Clock Timezone
 # Set timezone to: EST5EDT
-
-#
-#
+clock:
+  timezone: EST5EDT

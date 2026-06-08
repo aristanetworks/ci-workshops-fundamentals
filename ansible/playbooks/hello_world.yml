@@ -1,12 +1,12 @@
 ---
 
-- name: A simple playbook
+A simple playbook
   hosts: localhost
   vars:
     name: Mr.T
 
   tasks:
 
-    - name: Say Hello
+    Say Hello
       debug:
         msg: "Hello {{ name | default('you!') }}"
