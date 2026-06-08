@@ -26,18 +26,21 @@ aaa_authentication:
 # radius servers
 # Add additional host 192.168.1.11, vrf MGMT, key radiusserverkey
 radius_servers:
-  - host: 192.168.1.10
-    vrf: MGMT
-    key: radiusserverkey
+   - host: 192.168.1.10
+     vrf: MGMT
+     key: radiusserverkey
+   - host: 192.168.1.11
+     vrf: MGMT
+     key: newradkey
 
 
 
 # HTTP Client source interface and VRF
 # CLI Syntax: ip http client local-interface <interface> vrf <vrfname>
-ip_http_client_source_interfaces:
-    - name: Management1
-      vrf: MGMT
-
+#ip_radius_source_interfaces:
+#  - name: Management1
+#    vrf: MGMT
+#
 # RADIUS source interface and VRF
 # CLI Syntax: ip radius vrf <vrfname> source-interface <interface>
 # 
@@ -55,10 +58,10 @@ arp:
 # DNS Servers
 # Enable the following servers: 1.1.1.1, 4.4.4.4, 8.8.8.8
 
-# 
-#   
-#   
-#   
+name_servers:
+  - 1.1.1.1
+  - 4.4.4.4
+  - 8.8.8.8 
 
 # DNS lookup source interface
 ip_domain_lookup:
@@ -84,5 +87,10 @@ ntp:
 # Clock Timezone
 # Set timezone to: EST5EDT
 
-#
-#
+clock:
+  timezone: EST5EDT
+
+
+ip_http_client_source_interfaces:
+  - name: Loopback0
+    vrf: MGMT

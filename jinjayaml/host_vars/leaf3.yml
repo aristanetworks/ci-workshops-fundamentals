@@ -2,5 +2,21 @@
 # LEAF3 specific data model
 
 # Interfaces
-
+interfaces:
+  Ethernet1:
+    descr: "To_Spine1"
+    mode: "trunk"
+  Ethernet2:
+    descr: "To_Spine2"
+    mode: "trunk"
+  Ethernet10:
+    descr: "Host2"
+    mode: "access"
+    vlan: 20
+  Ethernet48:
+    descr: "To_Leaf4"
+    mode: "trunk"
 # VLANs
+vlans:
+  - id: 20
+    name: "twenty"
